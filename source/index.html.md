@@ -55,6 +55,46 @@ iPF UZO API expects for the Authorization token to be included in all API reques
 You must replace <code>uzo token</code> with your authorization token.
 </aside>
 
+# Login/Sign In
+
+## Staff Login
+
+```shell
+curl "http://example.com/api/v1/staff/login" \
+```
+
+```javascript
+const uzo = require('uzo');
+
+let api = uzo.authorize(Bearer + ' ' +'uzo token');
+let user = api.uzo.post();
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  {
+    "user": {
+        "_id": "61ef978974897134ee5d957e",
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "jondoe@example.co.tz",
+        "role": "61ef978874897134ee5d955b",
+        "phoneNumber": "+255713000000",
+        "type": "root",
+        "status": 1,
+        "createdAt": "2022-01-25T06:24:09.218Z",
+        "updatedAt": "2022-01-25T06:24:09.218Z"
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWVmOTc4OTc0ODk3MTM0ZWU1ZDk1N2UiLCJmaXJzdE5hbWUiOiJSb290IiwibGFzdE5hbWUiOiJBZG1pbiIsImVtYWlsIjoicm9vdEBpcGZjcm0uY28udHoiLCJyb2xlIjoiNjFlZjk3ODg3NDg5NzEzNGVlNWQ5NTViIiwicGhvbmVOdW1iZXIiOiIrMjU1NzEzMDAwMDAwIiwidHlwZSI6InJvb3QiLCJzdGF0dXMiOjEsImNyZWF0ZWRBdCI6IjIwMjItMDEtMjVUMDY6MjQ6MDkuMjE4WiIsInVwZGF0ZWRBdCI6IjIwMjItMDEtMjVUMDY6MjQ6MDkuMjE4WiIsImlhdCI6MTY0NDgzMjQ2OH0.3dSVk_6Az8NH8iGDSSh2RMIe2uhx6ipFCPe8g43Go2g",
+    "status": 200
+}
+}
+```
+
+This endpoint enables staff user to login with username and password all non staff users.
+
 # Users
 
 ## Get All Non Staff Users
