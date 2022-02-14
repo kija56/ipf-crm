@@ -1,8 +1,10 @@
 ---
-title: iPF UZO API Reference
+title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
+  - ruby
+  - python
   - javascript
 
 toc_footers:
@@ -18,7 +20,7 @@ code_clipboard: true
 
 meta:
   - name: description
-    content: Documentation for the Kittn API
+    content: Documentation for the iPF UZO API
 ---
 
 # Introduction
