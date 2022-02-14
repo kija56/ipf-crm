@@ -9,7 +9,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
+  
 
 includes:
   - errors
@@ -25,15 +25,13 @@ meta:
 
 # Introduction
 
-Welcome to the iPF UZO API! You can use this API to access UZO API endpoints, which can get information on various users,pipelines, deals, contacts, appointments, and more other informations in our database.
+Welcome to the iPF UZO API! You can use this API to access UZO API endpoints, which can get information on various users,pipelines, deals, contacts, appointments, and more other information in our database.
 
 We have language bindings in Shell and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
 
 # Authentication
 
 > To authorize, use this code:
-
 
 ```shell
 # With shell, you can just pass the correct header with each request
@@ -59,23 +57,9 @@ Kittn expects for the API key to be included in all API requests to the server i
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
-# Kittens
+# Users
 
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
+## Get All Users
 
 ```shell
 curl "http://example.com/api/kittens" \
@@ -127,24 +111,10 @@ available | true | If set to false, the result will include kittens that have al
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
+## Get a Specific User
 
 ```shell
-curl "http://example.com/api/kittens/2" \
+curl "http://example.com/api/users/2" \
   -H "Authorization: meowmeowmeow"
 ```
 
@@ -183,20 +153,6 @@ ID | The ID of the kitten to retrieve
 
 ## Delete a Specific Kitten
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
 ```shell
 curl "http://example.com/api/kittens/2" \
   -X DELETE \
@@ -230,4 +186,3 @@ This endpoint deletes a specific kitten.
 Parameter | Description
 --------- | -----------
 ID | The ID of the kitten to delete
-
