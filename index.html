@@ -320,6 +320,14 @@
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
+            <a href="#login-sign-in" class="toc-h1 toc-link" data-title="Login/Sign In">Login/Sign In</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#staff-login" class="toc-h2 toc-link" data-title="Staff Login">Staff Login</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#users" class="toc-h1 toc-link" data-title="Users">Users</a>
               <ul class="toc-list-h2">
                   <li>
@@ -372,6 +380,35 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 <aside class="notice">
 You must replace <code>uzo token</code> with your authorization token.
 </aside>
+<h1 id='login-sign-in'>Login/Sign In</h1><h2 id='staff-login'>Staff Login</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/v1/staff/login"</span> <span class="se">\</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">uzo</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">uzo</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">uzo</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="nx">Bearer</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span><span class="dl">'</span><span class="s1">uzo token</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">uzo</span><span class="p">.</span><span class="nx">post</span><span class="p">();</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"61ef978974897134ee5d957e"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jondoe@example.co.tz"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"61ef978874897134ee5d955b"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"phoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+255713000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"root"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-25T06:24:09.218Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-25T06:24:09.218Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWVmOTc4OTc0ODk3MTM0ZWU1ZDk1N2UiLCJmaXJzdE5hbWUiOiJSb290IiwibGFzdE5hbWUiOiJBZG1pbiIsImVtYWlsIjoicm9vdEBpcGZjcm0uY28udHoiLCJyb2xlIjoiNjFlZjk3ODg3NDg5NzEzNGVlNWQ5NTViIiwicGhvbmVOdW1iZXIiOiIrMjU1NzEzMDAwMDAwIiwidHlwZSI6InJvb3QiLCJzdGF0dXMiOjEsImNyZWF0ZWRBdCI6IjIwMjItMDEtMjVUMDY6MjQ6MDkuMjE4WiIsInVwZGF0ZWRBdCI6IjIwMjItMDEtMjVUMDY6MjQ6MDkuMjE4WiIsImlhdCI6MTY0NDgzMjQ2OH0.3dSVk_6Az8NH8iGDSSh2RMIe2uhx6ipFCPe8g43Go2g"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint enables staff user to login with username and password all non staff users.</p>
 <h1 id='users'>Users</h1><h2 id='get-all-non-staff-users'>Get All Non Staff Users</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/v1/users"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: uzo token"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">uzo</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">uzo</span><span class="dl">'</span><span class="p">);</span>
