@@ -1,10 +1,8 @@
 ---
-title: API Reference
+title: iPF UZO API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
-  - ruby
-  - python
   - javascript
 
 toc_footers:
@@ -25,7 +23,7 @@ meta:
 
 # Introduction
 
-Welcome to the iPF UZO API! You can use this API to access UZO API endpoints, which can get information on various users,pipelines, deals, contacts, appointments, and more other information in our database.
+Welcome to the ***iPF UZO API!*** You can use this API to access UZO API endpoints, which can get information on various users,pipelines, deals, contacts, appointments, and more other information in our database.
 
 We have language bindings in Shell and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
