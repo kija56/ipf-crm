@@ -1,14 +1,12 @@
 ---
-title: API Reference
+title: iPF UZO API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
-  - python
-  - javascript
+  - shell: cURL
+  - javascript: Javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
+  - <a href='#'>Contact Developers for more information</a>
   
 
 includes:
