@@ -177,7 +177,7 @@ This endpoint retrieves a specific user.
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET http://example.com/users/<ID>`
 
 ### URL Parameters
 
@@ -188,15 +188,15 @@ ID | The ID of the kitten to retrieve
 ## Delete a Specific Kitten
 
 ```shell
-curl "http://example.com/api/kittens/2" \
+curl "http://example.com/api/v1/users/2" \
   -X DELETE \
-  -H "Authorization: meowmeowmeow"
+  -H "Authorization: Bearer token"
 ```
 
 ```javascript
 const uzo = require('uzo');
 
-let api = uzo.authorize('meowmeowmeow');
+let api = uzo.authorize('Bearer token');
 let max = api.kittens.delete(2);
 ```
 
@@ -213,10 +213,10 @@ This endpoint deletes a specific kitten.
 
 ### HTTP Request
 
-`DELETE http://example.com/kittens/<ID>`
+`DELETE http://example.com/api/v1/users/<ID>`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the kitten to delete
+ID | The ID of the user to delete
